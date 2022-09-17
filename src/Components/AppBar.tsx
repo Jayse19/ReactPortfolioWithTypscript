@@ -42,7 +42,7 @@ const ResponsiveAppBar = () => {
     const LinkStyle = styled(Link)`
     color: White;
     text-decoration: none;
-    margin: Irem;
+    margin: 1rem;
     position: relative;
     `;
 
@@ -59,10 +59,10 @@ const ResponsiveAppBar = () => {
                             href="/"
                             sx={{
                                 mr: 2,
-                                display: { xs: 'none', md: 'flex' },
+                                display: { md: 'flex' },
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
-                                letterSpacing: '.3rem',
+                                letterSpacing: '.2rem',
                                 color: 'inherit',
                                 textDecoration: 'none',
                             }}
@@ -105,7 +105,7 @@ const ResponsiveAppBar = () => {
                                 ))}
                             </Menu>
                         </Box>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        <Box sx={{ flexGrow: .5, display: { md: 'flex' } }}>
                             {pages.map((page) => (
                                 <LinkStyle
                                     to={page.href}
