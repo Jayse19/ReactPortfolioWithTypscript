@@ -28,7 +28,8 @@ const ResponsiveAppBar = () => {
         { text: 'Home', href: '/' },
         { text: 'About me', href: '/AboutMe' },
         { text: 'My Projects', href: '/Projects' },
-        { text: 'Contact Me', href: '/Contact' }
+        { text: 'Contact Me', href: '/Contact' },
+        { text: 'Todo List', href: '/Todo' }
     ]
     
     const darkTheme = createTheme({
@@ -59,25 +60,25 @@ const ResponsiveAppBar = () => {
                             href="/"
                             sx={{
                                 mr: 2,
-                                display: { md: 'flex' },
+                                display: {xs: 'none', md: 'flex' },
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.2rem',
-                                color: 'inherit',
+                                color: 'white',
                                 textDecoration: 'none',
                             }}
                         >
                             Portfolio
                         </Typography>
 
-                        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <Box sx={{ flexGrow: .1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
                                 size="large"
                                 aria-label="account of current user"
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                                 onClick={handleOpenNavMenu}
-                                color="inherit"
+                                color = 'success'
                             >
                             </IconButton>
                             <Menu
@@ -96,6 +97,7 @@ const ResponsiveAppBar = () => {
                                 onClose={handleCloseNavMenu}
                                 sx={{
                                     display: { xs: 'block', md: 'none' },
+                                    color: 'white'
                                 }}
                             >
                                 {pages.map((page) => (

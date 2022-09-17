@@ -8,6 +8,7 @@ import ResponsiveAppBar from './Components/AppBar';
 import ContactMe from './Pages/ContactPage';
 import Projects from './Pages/ProjectsPage';
 import AboutMe from './Pages/AboutMePage';
+import TodoList from './Pages/TodoListPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Route path="/AboutMe" element={<AboutMe />} />
       <Route path="/Projects" element={<Projects />} />
       <Route path="/Contact" element={<ContactMe />} />
+      <Route path="/Todo" element={<TodoList />} />
     </Routes>
   </BrowserRouter>
 );
