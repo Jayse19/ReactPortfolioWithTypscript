@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Todo } from "../Pages/TodoListPage";
 
 type TodoProps = Todo & {
