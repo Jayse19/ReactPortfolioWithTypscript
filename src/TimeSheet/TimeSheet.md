@@ -13,3 +13,20 @@
  - As I ran into last week, I had problems with anything being displayed on the screen even though my function was correct. The simple answer was that I didn't have all the download files that I needed as something needed an update so I needed to implement the new file downloads.
  - I was able to get my site onto github pages after a couple failures, it took awhile for my code to be able to select the main branch or the "gh-pages" branch
  - I am still struggling with being able to show a side bar once my screen gets small enough. It works before my code was moved over to tsx
+
+ _____
+
+ ## Time Log: 9/19-9/21
+
+### Time spent: 
+- I spent about 2 hours watching the videos
+- I spent 3-4 hours working on my project making buttons for each project that shows you information for each button you click. One of the buttons has another button that appears that uses an example useEffect()
+ ### goals:
+ - Projects page has good styling 
+ - Use useEffect
+ - Buttons display different info
+
+ ### problems:
+ - Styling using mui was very difficult for some reason. It wasn't a specific problem but it took awhile to get the butons to line up
+ - I struggled because at first I wanted to do 2 onclick events but I realized in react that isn't possible
+ _____
