@@ -9,17 +9,48 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom'
 import styled from '@emotion/styled';
+import ReactDOM from 'react-dom';
 
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    
+
     const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElNav(event.currentTarget);
     };
-    
+
+
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
+    }
+    const DisplayMenu = () => {
+        return (
+            <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+                sx={{
+                    display: { xs: 'block', md: 'none' },
+                    color: 'white'
+                }}
+            >
+                {pages.map((page) => (
+                    <MenuItem key={page.text} onClick={handleCloseNavMenu}>
+                        <Typography textAlign="center">{page.text}</Typography>
+                    </MenuItem>
+                ))}
+            </Menu>
+        )
     }
     const pages = [
         { text: 'Home', href: '/' },
@@ -28,7 +59,7 @@ const ResponsiveAppBar = () => {
         { text: 'Contact Me', href: '/Contact' },
         { text: 'Todo List', href: '/Todo' }
     ]
-    
+
     const darkTheme = createTheme({
         palette: {
             mode: 'dark',
@@ -57,7 +88,7 @@ const ResponsiveAppBar = () => {
                             href="/"
                             sx={{
                                 mr: 2,
-                                display: {xs: 'none', md: 'flex' },
+                                display: { xs: 'none', md: 'flex' },
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.2rem',
@@ -75,34 +106,11 @@ const ResponsiveAppBar = () => {
                                 aria-controls="menu-appbar"
                                 aria-haspopup="true"
                                 onClick={handleOpenNavMenu}
-                                color = 'success'
+                                color='success'
                             >
                             </IconButton>
-                            <Menu
-                                id="menu-appbar"
-                                anchorEl={anchorElNav}
-                                anchorOrigin={{
-                                    vertical: 'bottom',
-                                    horizontal: 'left',
-                                }}
-                                keepMounted
-                                transformOrigin={{
-                                    vertical: 'top',
-                                    horizontal: 'left',
-                                }}
-                                open={Boolean(anchorElNav)}
-                                onClose={handleCloseNavMenu}
-                                sx={{
-                                    display: { xs: 'block', md: 'none' },
-                                    color: 'white'
-                                }}
-                            >
-                                {pages.map((page) => (
-                                    <MenuItem key={page.text} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page.text}</Typography>
-                                    </MenuItem>
-                                ))}
-                            </Menu>
+                            {ReactDOM.createPortal(<DisplayMenu />, document.getElementById("appBar") as HTMLElement)}
+
                         </Box>
                         <Box sx={{ flexGrow: .5, display: { md: 'flex' } }}>
                             {pages.map((page) => (

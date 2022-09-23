@@ -30,3 +30,18 @@
  - Styling using mui was very difficult for some reason. It wasn't a specific problem but it took awhile to get the butons to line up
  - I struggled because at first I wanted to do 2 onclick events but I realized in react that isn't possible
  _____
+
+ ## Time Log: 9/19-9/21
+
+### Time spent: 
+- I spent about 1 hour watching a video about react queries
+- I spent 3-4 hours working on my project adding a timer function that uses both useEffect() and useRef(). I also added some styling using css to the timer and I get a Query to work
+ ### goals:
+ - Timer has good styling 
+ - Fix useEffect(), add css, use react.memo, and use useRef()
+ - Use a simple query
+
+ ### problems:
+ - Timer moves up time really quickly and I am not sure how to fix this. There is no error so it's something I couldn't look up.
+ - Cant display data using a query
+ _____

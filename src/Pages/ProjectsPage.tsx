@@ -4,7 +4,6 @@ import { Grid } from '@mui/material';
 import Project1 from '../Components/ProjectOne';
 import Project2 from '../Components/ProjectTwo';
 import Project3 from '../Components/ProjectThree';
-import { DocumentScannerTwoTone } from '@mui/icons-material';
 
 const Projects = () => {
 
