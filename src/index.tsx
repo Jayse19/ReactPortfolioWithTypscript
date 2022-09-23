@@ -9,10 +9,12 @@ import ContactMe from './Pages/ContactPage';
 import Projects from './Pages/ProjectsPage';
 import AboutMe from './Pages/AboutMePage';
 import TodoList from './Pages/TodoListPage';
+import { Toaster } from 'react-hot-toast';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <BrowserRouter>
+  <Toaster/>
     <ResponsiveAppBar />
     <Routes>
       <Route path="/" element={<App />} />

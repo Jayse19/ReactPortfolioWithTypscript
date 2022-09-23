@@ -1,25 +1,28 @@
 import { Button } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
-import { Axios } from "axios";
+import  Axios from "axios";
 
 const CatFacts = () => {
-    const { data: catData, isLoading, isError, refetch } = useQuery(["cat"], () => {
-        return Axios.get("https://catfact.ninja/fact").then((res) => res.data)
+    const { data, isLoading, isError, refetch, error } = useQuery(["cat"], async () => {
+        const res = await Axios.get("https://catfact.ninja/fact");
+        return (res.data)
     })
 
     if(isError) {
-        <h1> Sorry there was an error</h1>
+       return (
+       <p> {error.message}</p>
+       )
     }
 
     if(isLoading) {
-        <h1> Loading.......</h1>
+       return( <h1> Loading.......</h1>)
     }
     return ( 
         <div>
-            <p>{catData?.fact}</p>
+            <p>{data.fact}</p>
             <Button onClick = {refetch}variant="contained" style={{ backgroundColor: "black" }}>Update Fact</Button>
         </div>
      );
 }
 
-export default CatFacts;
+export default CatFacts
