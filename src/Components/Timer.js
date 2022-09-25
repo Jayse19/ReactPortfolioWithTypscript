@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Timer.css'
 
 const Timer = () => {
@@ -14,18 +14,16 @@ const Timer = () => {
         setIsActive(false)
     }
 
-    let interval = useRef()
-
     useEffect(() => {
-        interval.current = null;
+        let interval = null;
         if (isActive) 
         {
-            interval = setInterval(setSeconds(seconds => seconds + 1), 1000);
+            interval = setInterval(() => {setSeconds(seconds => seconds + 1);}, 1000);
         } 
         else if (!isActive && seconds !== 0) {
-            clearInterval(interval.current);
+            clearInterval(interval);
         }
-        return () => clearInterval(interval.current);
+        return () => clearInterval(interval);
     }, [isActive, seconds]);
 
     return (
