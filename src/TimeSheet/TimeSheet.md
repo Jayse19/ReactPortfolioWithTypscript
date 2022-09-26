@@ -31,7 +31,7 @@
  - I struggled because at first I wanted to do 2 onclick events but I realized in react that isn't possible
  _____
 
- ## Time Log: 9/19-9/21
+ ## Time Log: 9/21-9/23
 
 ### Time spent: 
 - I spent about 1 hour watching a video about react queries
@@ -44,4 +44,22 @@
  ### problems:
  - Timer moves up time really quickly and I am not sure how to fix this. There is no error so it's something I couldn't look up.
  - Cant display data using a query
+ _____
+
+ ## Time Log: 9/23-9/26
+
+### Time spent: 
+- I spent about 2 hour watching the videos about forms
+- I spent 3-4 hours working on my project fixing the timer, adding useCallback, fixing the react query, using a new useRef, and adding a form
+ ### goals:
+ - Fix the timer
+ - Fix useEffect(), add css, use react.memo, and use useRef() in a better manner
+ - Fix query 
+ - Add useCallBack()
+ - Create a simple form using mui components.
+
+ ### problems:
+ - Finding an example to follow that would fit my portfolio.
+ - Displaying my code on github pages or a third party website.
+ - Form looking nice using mui (boxes too close to each other and name fields look bad. Values don't reset to default)
  _____

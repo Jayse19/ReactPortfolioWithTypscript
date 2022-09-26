@@ -1,8 +1,11 @@
+import Form from "../Components/Form";
 
 
 const ContactMe = () => {
     return ( 
-        <h1>Contact</h1>
+        <div>
+            <Form />
+        </div>
      );
 }
  
